@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{#{% load staticfiles %}#}
+
+{% block head %}
+
+{#    <link rel="stylesheet" href="//assets/stylesheets/bootstrap.min.css" />#}
+{#    <link rel="stylesheet" href="//assets/stylesheets/application.css" />#}
+{#    <script src="//assets/javascripts/jquery-1.9.1.js"></script>#}
+{#    <script src="//assets/javascripts/calculator.js"></script>#}
+
+
+{% endblock %}
+
+{% block body %}
+
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: center;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+
+
+}
+a:link, a:visited {
+  background-color: grey;
+  color: black;
+  border: 2px solid black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+}
+
+a:hover, a:active {
+  background-color: green;
+  color: white;
+}
+
+
+
+
+</style>
+
+<ul>
+  <li><a class="active" href="/krupp"><b>KRUPP</b></a></li>
+  <li><a href="/odermatt"><b>ODERMATT</b></a></li>
+
+</ul>
+
+  <div class="container text-center">
+
+ <h1> {{ nazwisko|title }}'a </h1>
+
+      <br/>
+      <br/>
+
+      <form action="" method="post">
+
+          {% csrf_token %}
+          {{ form.as_p }}
+
+          <button type="submit" name="oblicz">OBLICZ</button>
+
+
+      </form>
+
+      <br/>
+      <br/>
+       <h3>WYNIK: {{ result }}</h3>
+
+{% endblock %}

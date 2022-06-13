@@ -18,10 +18,10 @@ from django.contrib import admin
 from django.urls import path
 from django.views.generic import RedirectView
 
-from calculator import views
+from . import views
 
 
 urlpatterns = [
-    path('', RedirectView.as_view(url='Krupp')),
+    path('', RedirectView.as_view(url='Krupp/')),
     path('<nazwisko>/', views.HomePage.as_view()),
 ]
